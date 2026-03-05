@@ -8,7 +8,9 @@
     "es:down": "tsx ./src/es-compose.ts down",
     "es:restart": "tsx ./src/es-compose.ts restart",
     "es:logs": "tsx ./src/es-compose.ts logs",
-    "es:ps": "tsx ./src/es-compose.ts ps"
+    "es:ps": "tsx ./src/es-compose.ts ps",
+    "es:rmi": "docker compose down --rmi all",
+    "es:rmi:volumes": "docker compose down --rmi all -v"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +23,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@elastic/elasticsearch": "^9.3.1"
+    "@elastic/elasticsearch": "^9.3.1",
+    "express": "^5.2.1"
   }
 }
