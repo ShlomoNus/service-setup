@@ -21,6 +21,10 @@ export default defineConfig([
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
       },
+      globals: {
+        ...globals.node,
+        ...globals.es2025
+      },
       ecmaVersion: 'latest',
       sourceType: 'module',
     },
