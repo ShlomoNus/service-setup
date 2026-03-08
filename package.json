@@ -10,17 +10,25 @@
     "es:logs": "tsx ./src/es-compose.ts logs",
     "es:ps": "tsx ./src/es-compose.ts ps",
     "es:rmi": "docker compose down --rmi all",
-    "es:rmi:volumes": "docker compose down --rmi all -v"
+    "es:rmi:volumes": "docker compose down --rmi all -v",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@stylistic/eslint-plugin": "^4.2.0",
     "@types/express": "^5.0.6",
     "@types/node": "^25.3.0",
+    "eslint": "^9.15.0",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import-x": "^4.5.0",
+    "globals": "^15.12.0",
+    "jiti": "^2.4.2",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.15.0"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^9.3.1",

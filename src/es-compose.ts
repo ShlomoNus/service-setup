@@ -1,4 +1,4 @@
-import { spawnSync } from "node:child_process";
+import { spawnSync } from "child_process";
 
 type Action = "up" | "down" | "restart" | "logs" | "ps";
 
@@ -14,6 +14,7 @@ if (!action || !allowed.includes(action)) {
 
 function tryRun(cmd: string, args: string[]): boolean {
   const res = spawnSync(cmd, args, { stdio: "inherit" });
+
   return res.status === 0;
 }
 
@@ -29,11 +30,11 @@ function runCompose(composeArgs: string[]): void {
   if (tryRun("docker-compose", composeArgs)) return;
 
   console.error(
-    "Failed to run Docker Compose.\n" +
-      "- Ensure Docker Desktop is running (Windows)\n" +
-      "- Ensure WSL integration is enabled (if running inside WSL)\n" +
-      "- Ensure `docker` is on PATH\n" +
-      "- Ensure your compose file is named docker-compose.yml",
+    "Failed to run Docker Compose.\n"
+    + "- Ensure Docker Desktop is running (Windows)\n"
+    + "- Ensure WSL integration is enabled (if running inside WSL)\n"
+    + "- Ensure `docker` is on PATH\n"
+    + "- Ensure your compose file is named docker-compose.yml"
   );
   process.exit(1);
 }
@@ -46,7 +47,7 @@ switch (action) {
     runCompose(["down"]);
     break;
   case "restart":
-    // deterministic restart: down then up
+    // Deterministic restart: down then up
     runCompose(["down"]);
     runCompose(["up", "-d"]);
     break;
