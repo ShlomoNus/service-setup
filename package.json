@@ -11,7 +11,8 @@
     "es:ps": "tsx ./src/es-compose.ts ps",
     "es:rmi": "docker compose down --rmi all",
     "es:rmi:volumes": "docker compose down --rmi all -v",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
