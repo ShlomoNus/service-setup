@@ -1,23 +1,32 @@
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    "module": "nodenext",
-    "target": "esnext",
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
-    "noUncheckedIndexedAccess": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2022",
+
     "strict": true,
+    "noUncheckedIndexedAccess": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-    "composite": true,
-    "types": ["node"]
-  }
-  ,
+
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
+    "resolveJsonModule": true,
+    "types": ["node"],
+
+    "sourceMap": true,
+
+    "rootDir": ".",
+    "outDir": "dist"
+  },
   "include": [
     "src/**/*.ts",
-    "jest.config.ts"
+    "scripts/**/*.ts",
+    "jest.config.ts",
+    "eslint.config.ts"
   ],
   "exclude": [
     "dist",
