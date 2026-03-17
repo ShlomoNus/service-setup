@@ -1,13 +1,15 @@
-import { pathsToModuleNameMapper, createDefaultPreset } from 'ts-jest';
-import { compilerOptions } from './tsconfig.json';
+import { createDefaultPreset } from 'ts-jest';
 import type { Config } from 'jest';
 
 const config: Config = {
   ...createDefaultPreset(),
   testEnvironment: 'node',
-  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
-    prefix: '<rootDir>/',
-  }),
+  roots: ['<rootDir>/src'],
+  testMatch: ['**/*.spec.ts', '**/*.test.ts'],
+  clearMocks: true,
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
 };
 
 export default config;
