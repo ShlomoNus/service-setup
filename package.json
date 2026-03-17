@@ -1,17 +1,10 @@
 {
-  "name": "elasticsearch-tutorial",
+  "name": "service-setup",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "es:up": "tsx ./src/es-compose.ts up",
-    "es:down": "tsx ./src/es-compose.ts down",
-    "es:restart": "tsx ./src/es-compose.ts restart",
-    "es:logs": "tsx ./src/es-compose.ts logs",
-    "es:ps": "tsx ./src/es-compose.ts ps",
-    "es:rmi": "docker compose down --rmi all",
-    "es:rmi:volumes": "docker compose down --rmi all -v",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "jest",
@@ -48,7 +41,9 @@
     "typescript-eslint": "^8.57.1"
   },
   "dependencies": {
-    "@elastic/elasticsearch": "^9.3.1",
     "express": "^5.2.1"
+  },
+  "overrides": {
+    "eslint": "^10.0.3"
   }
 }
