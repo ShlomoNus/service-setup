@@ -3,8 +3,7 @@ import tseslint from "typescript-eslint";
 import stylistic from "@stylistic/eslint-plugin";
 import { importX } from "eslint-plugin-import-x";
 import globals from "globals";
-import tsParser from '@typescript-eslint/parser'
-
+import tsParser from "@typescript-eslint/parser";
 
 export default defineConfig([
   // --- presets ---
@@ -19,7 +18,7 @@ export default defineConfig([
       parser: tsParser,
       parserOptions: {
         projectService: true,
-        tsconfigRootDir: import.meta.dirname,
+        tsconfigRootDir: process.cwd(),
       },
       globals: {
         ...globals.node,
@@ -29,6 +28,8 @@ export default defineConfig([
       sourceType: 'module',
     },
     rules: {
+      '@stylistic/semi': ['error', 'always', { omitLastInOneLineBlock: true, omitLastInOneLineClassBody: true }],
+      '@stylistic/eol-last': 'off',
       'import-x/no-dynamic-require': 'warn',
       'import-x/no-nodejs-modules': 'off',
     },
@@ -49,7 +50,8 @@ export default defineConfig([
     files: ["src/**/*.ts"],
     rules: {
       // --- stylistic rules ---
-      "@stylistic/semi": ["error", "always"],
+      "@stylistic/semi": ["error", "always", { omitLastInOneLineBlock: true, omitLastInOneLineClassBody: true }],
+      "@stylistic/eol-last": "off",
       "@stylistic/quotes": ["error", "double"],
       "@stylistic/arrow-parens": ["error", "as-needed"],
       "@stylistic/comma-dangle": ["error", "never"],
