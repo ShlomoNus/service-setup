@@ -1,3 +1,2 @@
-const a = 2;
+export const a = 2;
 
-export default a;
