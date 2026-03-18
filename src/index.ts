@@ -1,3 +1,3 @@
-const y = 2;
+const x = 2;
 
-export default y;
+export default x;
