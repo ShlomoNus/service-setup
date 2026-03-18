@@ -1,2 +1,8 @@
 #!/bin/sh
+# Load shell env when run from IDE (Cursor/VS Code) so npm is on PATH
+command -v npm >/dev/null 2>&1 || {
+  [ -f "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
+  [ -f "$HOME/.zshrc" ] && . "$HOME/.zshrc" 2>/dev/null
+  [ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc" 2>/dev/null
+}
 npm run lint
