@@ -1,5 +1,5 @@
 {
-  "name": "service-setup",
+  "name": "MOD.earthquake-reports-search-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,7 +15,14 @@
     "build:js": "tsx scripts/build.ts --prod",
     "build:dev": "tsx scripts/build.ts",
     "typecheck": "tsc --noEmit",
-    "build:types": "tsc -p tsconfig.build.json"
+    "build:types": "tsc -p tsconfig.build.json",
+    "docker:start": "docker compose up -d",
+    "docker:stop": "docker compose stop",
+    "docker:down": "docker compose down",
+    "docker:restart": "docker compose down && docker compose up -d",
+    "docker:logs": "docker compose logs -f",
+    "docker:ps": "docker compose ps",
+    "docker:clean": "docker compose down -v --remove-orphans"
   },
   "keywords": [],
   "author": "",
