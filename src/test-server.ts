@@ -4,7 +4,7 @@ async function main(): Promise<void> {
   loadLocalEnv();
 
   const [{ app }, { logger }] = await Promise.all([
-    import("./app"),
+    import("./server"),
     import("./utils/logger")
   ]);
   const PORT = Number(process.env.PORT) || 3080;
