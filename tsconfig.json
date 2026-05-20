@@ -1,32 +1,30 @@
 {
   "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "commonjs",
+    "moduleResolution": "node",
     "target": "ES2022",
-
     "strict": true,
+    "esModuleInterop": true,
     "noUncheckedIndexedAccess": true,
-    "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     },
-
     "resolveJsonModule": true,
-    "types": ["node"],
-
+    "types": [
+      "node"
+    ],
     "sourceMap": true,
-
     "rootDir": ".",
     "outDir": "dist"
   },
   "include": [
     "src/**/*.ts",
     "scripts/**/*.ts",
-    "jest.config.ts",
-    "eslint.config.ts"
+    "jest.config.ts"
   ],
   "exclude": [
     "dist",
